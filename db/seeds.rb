@@ -1,0 +1,32 @@
+# Składniki
+Ingredient.create(name: "Mąka")
+Ingredient.create(name: "Cukier")
+Ingredient.create(name: "Jajka")
+Ingredient.create(name: "Mleko")
+Ingredient.create(name: "Masło")
+Ingredient.create(name: "Proszek do pieczenia")
+Ingredient.create(name: "Sól")
+Ingredient.create(name: "Czekolada")
+Ingredient.create(name: "Banany")
+Ingredient.create(name: "Truskawki")
+
+# Przepisy
+recipe1 = Recipe.create(name: "Ciasto czekoladowe", instructions: "Wymieszaj składniki i piecz w 180 stopniach przez 30 minut.")
+recipe1.recipe_ingredients.create(ingredient_id: 1, quantity: "2 szklanki")
+recipe1.recipe_ingredients.create(ingredient_id: 2, quantity: "1 szklanka")
+recipe1.recipe_ingredients.create(ingredient_id: 3, quantity: "2 sztuki")
+recipe1.recipe_ingredients.create(ingredient_id: 4, quantity: "1 szklanka")
+recipe1.recipe_ingredients.create(ingredient_id: 5, quantity: "100g")
+recipe1.recipe_ingredients.create(ingredient_id: 6, quantity: "1 łyżeczka")
+recipe1.recipe_ingredients.create(ingredient_id: 8, quantity: "200g")
+
+recipe2 = Recipe.create(name: "Naleśniki", instructions: "Wymieszaj składniki i smaż na patelni.")
+recipe2.recipe_ingredients.create(ingredient_id: 1, quantity: "1 szklanka")
+recipe2.recipe_ingredients.create(ingredient_id: 3, quantity: "2 sztuki")
+recipe2.recipe_ingredients.create(ingredient_id: 4, quantity: "1 szklanka")
+recipe2.recipe_ingredients.create(ingredient_id: 7, quantity: "szczypta")
+
+recipe3 = Recipe.create(name: "Koktajl bananowy", instructions: "Zmiksuj składniki w blenderze.")
+recipe3.recipe_ingredients.create(ingredient_id: 9, quantity: "2 sztuki")
+recipe3.recipe_ingredients.create(ingredient_id: 4, quantity: "1 szklanka")
+recipe3.recipe_ingredients.create(ingredient_id: 10, quantity: "100g")

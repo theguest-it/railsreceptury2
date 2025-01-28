@@ -1,0 +1,38 @@
+<%= form_with model: recipe do |form| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructions %>
+    <%= form.text_area :instructions %>
+  </div>
+
+  <div class="field">
+    <h2>Składniki</h2>
+    <% ingredients.each do |ingredient| %>
+      <div>
+        <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, recipe.ingredients.include?(ingredient) %>
+        <%= label_tag "recipe[ingredient_ids][]", ingredient.name %>
+        <%= number_field_tag "recipe[ingredient_quantities][]", recipe.recipe_ingredients.find_by(ingredient_id: ingredient.id)&.quantity, placeholder: "Ilość" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

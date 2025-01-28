@@ -1,0 +1,13 @@
+<h1>Składniki</h1>
+
+<%= link_to 'Nowy składnik', new_ingredient_path %>
+
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li>
+      <%= link_to ingredient.name, ingredient %>
+      <%= link_to 'Edytuj', edit_ingredient_path(ingredient) %>
+      <%= link_to 'Usuń', ingredient, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten składnik?' } %>
+    </li>
+  <% end %>
+</ul>

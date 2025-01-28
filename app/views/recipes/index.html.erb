@@ -1,0 +1,13 @@
+<h1>Przepisy</h1>
+
+<%= link_to 'Nowy przepis', new_recipe_path %>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe.name, recipe %>
+      <%= link_to 'Edytuj', edit_recipe_path(recipe) %>
+      <%= link_to 'Usuń', recipe, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten przepis?' } %>
+    </li>
+  <% end %>
+</ul>
